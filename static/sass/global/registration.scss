@@ -1,0 +1,124 @@
+@import "../mixins.scss";
+/// REGISTRATION FORM
+
+.headline {
+  background-image: url("../img/background_white.jpg");
+  margin: 0;
+  text-align: center;
+  padding: 2.5vh 2.5vh;
+}
+
+.regForm {
+  background-image: url("../img/background_white.jpg");
+  color: black;
+  text-align: center;
+  margin: auto;
+
+  .regForm__table {
+    margin: auto;
+
+    .table__tr {
+      display: flex;
+      flex-direction: column;
+
+      .tr__username {
+        @include formInput();
+        @include indentation();
+      }
+
+      .tr__username--red {
+        @include formInput();
+        @include indentation();
+        border: 2px solid red;
+      }
+
+      .tr__username--green {
+        @include formInput();
+        @include indentation();
+        border: 2px solid green;
+      }
+
+      .tr__username:focus {
+        border: 1px solid #6a4d38;
+      }
+
+      .tr__email {
+        @include formInput();
+        @include indentation();
+      }
+
+      .tr__email--green {
+        @include formInput();
+        @include indentation();
+        border: 2px solid green;
+      }
+
+      .tr__email--red {
+        @include formInput();
+        @include indentation();
+        border: 2px solid red;
+      }
+
+      .tr__email:focus {
+        border: 1px solid #6a4d38;
+      }
+
+      .tr__password1 {
+        @include formInput();
+        @include indentation();
+      }
+
+      .tr__password1--green {
+        @include formInput();
+        @include indentation();
+        border: 2px solid green;
+      }
+
+      .tr__password1--red {
+        @include formInput();
+        @include indentation();
+        border: 2px solid red;
+      }
+
+      .tr__password1:focus {
+        border: 1px solid #6a4d38;
+      }
+
+      .tr__password2 {
+        @include formInput();
+        @include indentation();
+      }
+
+      .tr__password2--green {
+        @include formInput();
+        @include indentation();
+        border: 2px solid green;
+      }
+
+      .tr__password2--red {
+        @include formInput();
+        @include indentation();
+        border: 2px solid red;
+      }
+
+      .tr__password2:focus {
+        border: 1px solid #6a4d38;
+      }
+    }
+  }
+
+  .regForm__btn {
+    background-color: #6a4d38;
+    @include registerBtn();
+  }
+
+  .regForm__btn--disabled {
+    background-color: #422f21;
+    @include registerBtn()
+  }
+
+  .regForm__btn:active {
+    color: #a09187;
+  }
+
+}

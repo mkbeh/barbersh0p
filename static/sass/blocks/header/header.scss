@@ -1,0 +1,41 @@
+.flex-container {
+
+  .flex-container__header {
+
+    .header__logo {
+
+      .logo__block {
+        display: flex;
+        justify-content: center;
+        padding-top: 4vh;
+        padding-bottom: 3vh;
+      }
+    }
+
+    .header__list {
+      display: flex;
+      justify-content: space-between;
+      background-color: #826550;
+      align-items: center;
+
+      .list__page-name {
+        display: flex;
+        color: #ffffff;
+        font-size: 1.1rem;
+        margin: auto;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        padding-left: 3em;
+      }
+
+      .nav__img {
+        background-color: #6a4d38;
+
+        .img--active {
+          cursor: pointer;
+          padding: 2.3vh;
+        }
+      }
+    }
+  }
+}

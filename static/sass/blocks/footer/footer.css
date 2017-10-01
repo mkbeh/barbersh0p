@@ -1,0 +1,26 @@
+.flex-container .flex-container__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2vh;
+  color: #ffffff; }
+  .flex-container .flex-container__footer .footer__shop-name {
+    margin-bottom: -1vh; }
+  .flex-container .flex-container__footer .footer__about {
+    margin-bottom: 4vh; }
+  .flex-container .flex-container__footer .footer__social-networks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 7vh; }
+  .flex-container .flex-container__footer .footer__develop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7vh;
+    margin-bottom: 8vh; }
+    .flex-container .flex-container__footer .footer__develop .develop__name {
+      padding-top: 2vh; }
+
+/*# sourceMappingURL=footer.css.map */

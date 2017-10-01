@@ -1,0 +1,190 @@
+.headline {
+  background-image: url("../img/background_white.jpg");
+  margin: 0;
+  text-align: center;
+  padding: 2.5vh 2.5vh; }
+
+.regForm {
+  background-image: url("../img/background_white.jpg");
+  color: black;
+  text-align: center;
+  margin: auto; }
+  .regForm .regForm__table {
+    margin: auto; }
+    .regForm .regForm__table .table__tr {
+      display: flex;
+      flex-direction: column; }
+      .regForm .regForm__table .table__tr .tr__username {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px; }
+      .regForm .regForm__table .table__tr .tr__username--red {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px;
+        border: 2px solid red; }
+      .regForm .regForm__table .table__tr .tr__username--green {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px;
+        border: 2px solid green; }
+      .regForm .regForm__table .table__tr .tr__username:focus {
+        border: 1px solid #6a4d38; }
+      .regForm .regForm__table .table__tr .tr__email {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px; }
+      .regForm .regForm__table .table__tr .tr__email--green {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px;
+        border: 2px solid green; }
+      .regForm .regForm__table .table__tr .tr__email--red {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px;
+        border: 2px solid red; }
+      .regForm .regForm__table .table__tr .tr__email:focus {
+        border: 1px solid #6a4d38; }
+      .regForm .regForm__table .table__tr .tr__password1 {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px; }
+      .regForm .regForm__table .table__tr .tr__password1--green {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px;
+        border: 2px solid green; }
+      .regForm .regForm__table .table__tr .tr__password1--red {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px;
+        border: 2px solid red; }
+      .regForm .regForm__table .table__tr .tr__password1:focus {
+        border: 1px solid #6a4d38; }
+      .regForm .regForm__table .table__tr .tr__password2 {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px; }
+      .regForm .regForm__table .table__tr .tr__password2--green {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px;
+        border: 2px solid green; }
+      .regForm .regForm__table .table__tr .tr__password2--red {
+        background-color: white;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        font-size: 0.8rem;
+        width: 70vw;
+        max-width: 450px;
+        border: 2px solid red; }
+      .regForm .regForm__table .table__tr .tr__password2:focus {
+        border: 1px solid #6a4d38; }
+  .regForm .regForm__btn {
+    background-color: #6a4d38;
+    color: white;
+    border: 1px solid black;
+    padding: 0.6em 0.7em 0.6em 0.7em;
+    width: 50vw;
+    max-width: 300px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    margin-top: 2.5vh; }
+  .regForm .regForm__btn--disabled {
+    background-color: #422f21;
+    color: white;
+    border: 1px solid black;
+    padding: 0.6em 0.7em 0.6em 0.7em;
+    width: 50vw;
+    max-width: 300px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    margin-top: 2.5vh; }
+  .regForm .regForm__btn:active {
+    color: #a09187; }
+
+/*# sourceMappingURL=registration.css.map */

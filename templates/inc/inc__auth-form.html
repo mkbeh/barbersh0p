@@ -1,0 +1,35 @@
+<div class="popup__container">
+    <div class="auth-form" id="auth">
+        <strong>ЛИЧНЫЙ КАБИНЕТ</strong>
+        <p>Введите свой логин и пароль, чтобы войти</p>
+        {% if not user.is_authenticated %}
+            {% if errors %}
+                <p class="auth-form__error">Вы неправильно ввели логин или пароль</p>
+            {% endif %}
+        <form name="form" onsubmit="return validate(this.form)" method="post" action="{% url 'login' %}" class="form" id="popupForm">
+            {% csrf_token %}
+            <input class="form__login" type="text" name="login" value="{{ username }}" placeholder="Логин" id="login"
+                   required
+                   title="Введите пожалуйта валидное имя пользователя или email.">
+            <span class="form__tooltip form__tooltip--none">Введите валидное имя пользователя или email.</span>
+            <input class="form__password" type="password" name="password" value="" placeholder="Пароль" id="password"
+                   required
+                   title="Введите пожалуйта пароль.">
+            <div class="squaredFour">
+                <input type="checkbox" value="None" id="squaredFour" name="check"/>
+                <label for="squaredFour"></label>
+                <span class="links__label">Запомните меня</span>
+                <a class="links_link" href="#">Я забыл пароль!</a>
+            </div>
+            <a class="form__registration-link" href="{% url 'registration' %}">Регистрация</a>
+            <button class="form__submit" type="submit" id="popupBtn">ВОЙТИ В ЛИЧНЫЙ КАБИНЕТ</button>
+        </form>
+        {% else %}
+            {{ user.username }}
+            <a href="{% url 'logout' %}">Выход</a>
+        {% endif %}
+        </div>
+{#        <span class="btn-close">#}
+{#            <button class="button-close--style" type="button" title="закрыть">&times;</button>#}
+{#        </span>#}
+</div>

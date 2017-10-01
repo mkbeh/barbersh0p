@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script defer src="{% static "js/build/min.js" %}"></script>
+    {% block js %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %} :: Barbershop</title>
+</head>
+<body>
+
+{#    <div id="page-preloader" class="preloader" >#}
+{#        <div class="loader"></div>#}
+{#    </div>#}
+
+    <div id="page-preloader" class="preloader-2" >
+        <div class="loader">
+            <span id="load_perc">0%</span>
+        </div>
+    </div>
+
+    <div class="flex-container" id="flex">
+        <header class="flex-container__header" id="head">
+            <div class="header__logo">
+                <span class="logo__block">
+                    <a href="#">
+{#                        <object type="image/svg+xml" data="{% static "img/logotype-mobile.svg" %}">Logo</object>#}
+                        <img src="{% static "img/logotype-mobile.png" %}">
+                    </a>
+                </span>
+            </div>
+            <div class="header__list" id="list">
+                <span class="list__page-name">Название Страницы</span>
+                <span class="nav__img">
+                    <img class="img--active" id="imgBurger" src="{% static "img/menu-icon.png" %}">
+                </span>
+            </div>
+        </header>
+        {% block content %}
+           <p>
+               ЗДЕСЬ БУДЕТ КОНТЕНТИЩЕЕЕЕЕЕЕЕ!!!!!!!!ЗДЕСЬ БУДЕТ КОНТЕНТИЩЕЕЕЕЕЕЕЕ!!!!!!!!
+           </p>
+           {% if user.is_authenticated %}
+                Или не будет)))
+               {{ user.username }}
+               <a href="{% url "logout" %}">logout</a>
+           {% endif %}
+        {% endblock %}
+
+        <footer class="flex-container__footer">
+            <strong class="footer__shop-name">Барбершоп Бородинский</strong>
+            <p class="footer__about">
+                г. Санкт-Петербург, ул. Большая
+                Конюшенная 19/8
+            </p>
+            <strong>+7(812)555-66-66</strong>
+            <div class="footer__social-networks">
+                <a href="https://vk.com/" target="_blank">
+                    <img src="{% static "img/vk-icon-big.png" %}">
+                </a>
+                <a href="https://ru-ru.facebook.com/" target="_blank">
+                    <img src="{% static "img/facebook-icon-big.png" %}">
+                </a>
+                <a href="https://www.instagram.com/?hl=ru" target="_blank">
+                   <img src="{% static "img/insta-icon-big.png" %}">
+                </a>
+            </div>
+            <span class="footer__develop">
+                <span>Разработано:</span>
+                <strong class="develop__name">mkbeh</strong>
+            </span>
+        </footer>
+    </div>
+
+    {% include 'inc/inc__auth-form.html' %}
+    {% include 'inc/inc__nav-menu.html' %}
+</body>
+</html>

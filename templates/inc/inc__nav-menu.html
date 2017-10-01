@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<nav class="list__nav" id="list__nav">
+    <div class="nav__container">
+        <span class="container__button-close">
+            <button class="button-close--style" type="button" title="закрыть">&times;</button>
+        </span>
+        <ul class="container__list" id="item__link">
+            <li class="list__item" >
+                <a class="item__link" href="{% url 'main' %}">ГЛАВНАЯ</a>
+            </li>
+            <li class="list__item">
+                <a class="item__link" href="#">ИНФОРМАЦИЯ</a>
+            </li>
+            <li class="list__item">
+                <a class="item__link" href="#">НОВОСТИ</a>
+            </li>
+            <li class="list__item">
+                <a class="item__link" href="#">ПРАЙС-ЛИСТ</a>
+            </li>
+            <li class="list__item">
+                <a class="item__link" href="#">КОНТАКТЫ</a>
+            </li>
+            <li class="list__item--last">
+                <a class="item__link">
+                    <img class="link__img" src="{% static "img/login.png" %}">
+                    <span>&nbsp;&nbsp;Вход</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

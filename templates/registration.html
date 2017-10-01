@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="headline">Регистрация</h2>
+    <form method="post" action="{% url 'registration' %}" class="regForm" id="regForm">
+       {% csrf_token %}
+        <table class="regForm__table">
+            {% for field in form %}
+                <tr class="table__tr">
+                    <td class="table__td">
+                        {{ field.label_tag }}
+                    </td>
+                    <td class="table__td">
+                        {{ field }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" value="Зарегистрироваться" disabled class="regForm__btn" id="reg">
+    </form>
+{% endblock %}
+
