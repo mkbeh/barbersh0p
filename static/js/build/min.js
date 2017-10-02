@@ -43,14 +43,14 @@ window.onload = function(){
         tooltip = document.querySelector('.form__tooltip'), // tooltip of popup form
         popupForm = document.getElementById('popupForm'), // form of popup
         popupBtn = document.getElementById('popupBtn'),
-        flexCont = document.querySelector('.flex-container'); // flex container which contains: header content footer
+        flexCont = document.querySelector('.flex-container'), // flex container which contains: header content footer
+        cont = document.querySelector('.popup__container'); // popup container (auth-form)
 
 
     // getting current location for redirect form from /user/login/ when closed
     var location = window.location,
         newLocation = String(location),
         subLocation = '/user/login/';
-
 
 
     // open menu onClick
@@ -98,7 +98,8 @@ window.onload = function(){
                 list.classList.remove('container__list--none');
             }
 
-            setTimeout(closeMenu, 1000);
+            setTimeout(closeMenu, 400);
+            flexCont.style.opacity = 1;
         }
     }
 
@@ -108,163 +109,164 @@ window.onload = function(){
     /// POPUP
 
     // open popup
-    login.addEventListener('click', function () {
-        authForm.classList.add('login--active');
-        list.classList.toggle('container__list--show', false);
-        list2.replaceChild(img, list2.children[1]);
-        // closePopup.classList.remove('btn-close');
-        // closePopup.classList.add('btn--active');
+    if (cont) {
+        login.addEventListener('click', function () {
+            authForm.classList.add('login--active');
+            list.classList.toggle('container__list--show', false);
+            list2.replaceChild(img, list2.children[1]);
+            // closePopup.classList.remove('btn-close');
+            // closePopup.classList.add('btn--active');
 
-        popupBtn.disabled = true;
-        popupBtn.classList.add('form__submit--disabled');
-        flexCont.style.opacity = .2;
-    });
+            popupBtn.disabled = true;
+            popupBtn.classList.add('form__submit--disabled');
+            flexCont.style.opacity = .2;
+        });
 
 
-    // close popup  by pressing out of form
-    var auth = document.getElementById('auth'), // authentication form
-        flex = document.getElementById('flex'); // flex container which contains: header, content, footer
+        // close popup  by pressing out of form
+        var auth = document.getElementById('auth'), // authentication form
+            flex = document.getElementById('flex'); // flex container which contains: header, content, footer
 
-    function closeAuth(event) {
-        var target = event.target;
+        function closeAuth(event) {
+            var target = event.target;
 
-        while (target.id !== flex.id) {
-            if (target.children !==  auth.children){
-                authForm.classList.add('login--none'); // animation of closing popup
+            while (target.id !== flex.id) {
+                if (target.children !== auth.children) {
+                    authForm.classList.add('login--none'); // animation of closing popup
 
-                function closePopup() {
-                    authForm.classList.remove('login--active');
+                    function closePopup() {
+                        authForm.classList.remove('login--active');
 
-                    // closePopup.classList.add('btn-close');
-                    // closePopup.classList.remove('btn--active');
+                        // closePopup.classList.add('btn-close');
+                        // closePopup.classList.remove('btn--active');
 
-                    formLogin.classList.remove('form__login--red');
-                    formLogin.classList.remove('form__login--green');
-                    formLogin.classList.add('form__login');
-                    tooltip.classList.remove('form__tooltip--active');
-                    tooltip.classList.add('form__tooltip--none');
-                    formPassword.classList.remove('form__password--red');
-                    formPassword.classList.remove('form__password--green');
-                    formPassword.classList.add('form__password');
-                    authForm.classList.remove('login--none');
+                        formLogin.classList.remove('form__login--red');
+                        formLogin.classList.remove('form__login--green');
+                        formLogin.classList.add('form__login');
+                        tooltip.classList.remove('form__tooltip--active');
+                        tooltip.classList.add('form__tooltip--none');
+                        formPassword.classList.remove('form__password--red');
+                        formPassword.classList.remove('form__password--green');
+                        formPassword.classList.add('form__password');
+                        authForm.classList.remove('login--none');
+                    }
+
+                    setTimeout(closePopup, 400);
+                    flexCont.style.opacity = 1;
+
+                    // for redirect from /user/login/ to / if form is closed
+                    if (newLocation.includes(subLocation) === true) {
+                        document.location.href = '/';
+                    }
+
+                    popupForm.reset();
+
+                    for (var i = 0; i < formLogin.length; i++) formLogin[i].style.border = '1px solid black';
+                    for (var g = 0; g < tooltip.length; g++) tooltip[g].style.display = 'none';
+
+                    return;
                 }
-
-                setTimeout(closePopup, 1000);
-                flexCont.style.opacity = 1;
-
-                // for redirect from /user/login/ to / if form is closed
-                if (newLocation.includes(subLocation) === true) {
-                    document.location.href = '/';
-                }
-
-                popupForm.reset();
-
-                for (var i=0; i<formLogin.length; i++)formLogin[i].style.border = '1px solid black';
-                for (var g=0; g<tooltip.length; g++)tooltip[g].style.display = 'none';
-
-                return;
             }
         }
-    }
 
-    flex.addEventListener('click', closeAuth, true);
-
-
-    // // close popup on key 'X'
-    // closePopup.addEventListener('click', function () {
-    //     authForm.classList.remove('login--active');
-    //     closePopup.classList.add('btn-close');
-    //     closePopup.classList.remove('btn--active');
-    //
-    //     // for redirect from /user/login/ to / if form is closed
-    //     if (newLocation.includes(subLocation) === true) {
-    //         document.location.href= '/';
-    //     }
-    // });
+        flex.addEventListener('click', closeAuth, true);
 
 
-    // if current URL includes /user/login/ popup active
-    function activePopup() {
-        if (newLocation.includes(subLocation) === true) {
-            authForm.classList.add('login--active');
-            //closePopup.classList.add('btn--active');
+        // // close popup on key 'X'
+        // closePopup.addEventListener('click', function () {
+        //     authForm.classList.remove('login--active');
+        //     closePopup.classList.add('btn-close');
+        //     closePopup.classList.remove('btn--active');
+        //
+        //     // for redirect from /user/login/ to / if form is closed
+        //     if (newLocation.includes(subLocation) === true) {
+        //         document.location.href= '/';
+        //     }
+        // });
 
-            popupBtn.disabled = true;
-            popupBtn.classList.add('form__submit--disabled');
-            popupBtn.classList.remove('form__submit');
-            popupForm.reset();
-            flexCont.style.opacity = .2;
-            authForm.classList.add('error1');
+
+        // if current URL includes /user/login/ popup active
+        function activePopup() {
+            if (newLocation.includes(subLocation) === true) {
+                authForm.classList.add('login--active');
+                //closePopup.classList.add('btn--active');
+
+                popupBtn.disabled = true;
+                popupBtn.classList.add('form__submit--disabled');
+                popupBtn.classList.remove('form__submit');
+                popupForm.reset();
+                flexCont.style.opacity = .2;
+                authForm.classList.add('error1');
+            }
+        }
+
+        activePopup();
+
+
+        // POPUP AUTH FORM VALIDATION
+        var inputLogin = document.querySelector('#login'),
+            inputPassword = document.getElementById('password'),
+            form = document.querySelector('.form');
+
+        if (cont) {
+            // form validation field login
+            inputLogin.addEventListener('input', function (event) {
+                event.preventDefault();
+                var email = inputLogin.value,
+                    emailPattern = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/,
+                    testEmail = emailPattern.test(email),
+                    username = inputLogin.value,
+                    usernamePattern = /^[a-zA-Z][a-zA-Z0-9-_\.]{4,20}$/, // с огр-м 5-20, к-мы могут быть быквы и цифры, первый обязательно буква
+                    testUsername = usernamePattern.test(username);
+
+
+                if (testEmail || testUsername) {
+                    formLogin.classList.remove('form__login');
+                    formLogin.classList.remove('form__login--red');
+                    formLogin.classList.add('form__login--green');
+
+                    tooltip.classList.remove('form__tooltip--active');
+                    tooltip.classList.add('form__tooltip--none');
+                } else {
+                    formLogin.classList.remove('form__login--green');
+                    formLogin.classList.remove('form__login');
+                    formLogin.classList.add('form__login--red');
+
+                    tooltip.classList.remove('form__tooltip--none');
+                    tooltip.classList.add('form__tooltip--active');
+                }
+            });
+
+            //form validation field password
+            inputPassword.addEventListener('input', function (event) {
+                event.preventDefault();
+                var passVal = inputPassword.value;
+
+                if (passVal.length < 6) {
+                    formPassword.classList.remove('form__password');
+                    formPassword.classList.add('form__password--red');
+                    formPassword.classList.remove('form__password--green');
+                } else {
+                    formPassword.classList.remove('form__password--red');
+                    formPassword.classList.add('form__password--green');
+                }
+
+            });
+
+
+            // validation input login and password to disabled or undisabled button
+            form.addEventListener('input', function () {
+                if (inputLogin.classList.contains('form__login--green') && inputPassword.classList.contains('form__password--green')) {
+                    popupBtn.disabled = false;
+                    popupBtn.classList.remove('form__submit--disabled');
+                    popupBtn.classList.add('form__submit');
+                } else if (inputLogin.classList.contains('form__login--red') || inputPassword.classList.contains('form__password--red')) {
+                    popupBtn.disabled = true;
+                    popupBtn.classList.add('form__submit--disabled');
+                }
+            });
         }
     }
-
-    activePopup();
-
-
-    // form validation field login
-    var inputLogin = document.querySelector('#login');
-
-    inputLogin.addEventListener('input', function (event) {
-        event.preventDefault();
-        var email = inputLogin.value,
-            emailPattern = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/,
-            testEmail = emailPattern.test(email),
-            username = inputLogin.value,
-            usernamePattern = /^[a-zA-Z][a-zA-Z0-9-_\.]{4,20}$/, // с огр-м 5-20, к-мы могут быть быквы и цифры, первый обязательно буква
-            testUsername = usernamePattern.test(username);
-
-
-        if (testEmail || testUsername) {
-            formLogin.classList.remove('form__login');
-            formLogin.classList.remove('form__login--red');
-            formLogin.classList.add('form__login--green');
-
-            tooltip.classList.remove('form__tooltip--active');
-            tooltip.classList.add('form__tooltip--none');
-        } else {
-            formLogin.classList.remove('form__login--green');
-            formLogin.classList.remove('form__login');
-            formLogin.classList.add('form__login--red');
-
-            tooltip.classList.remove('form__tooltip--none');
-            tooltip.classList.add('form__tooltip--active');
-        }
-    });
-
-
-    //form validation field password
-    var inputPassword = document.getElementById('password');
-
-
-    inputPassword.addEventListener('input', function (event) {
-        event.preventDefault();
-        var passVal = inputPassword.value;
-
-        if (passVal.length < 6) {
-            formPassword.classList.remove('form__password');
-            formPassword.classList.add('form__password--red');
-            formPassword.classList.remove('form__password--green');
-        } else {
-            formPassword.classList.remove('form__password--red');
-            formPassword.classList.add('form__password--green');
-        }
-
-    });
-
-    // validation input login and password to disabled or undisabled button
-    var form = document.querySelector('.form');
-
-    form.addEventListener('input', function () {
-        if (inputLogin.classList.contains('form__login--green') && inputPassword.classList.contains('form__password--green')) {
-            popupBtn.disabled = false;
-            popupBtn.classList.remove('form__submit--disabled');
-            popupBtn.classList.add('form__submit');
-        } else if (inputLogin.classList.contains('form__login--red') || inputPassword.classList.contains('form__password--red')) {
-            popupBtn.disabled = true;
-            popupBtn.classList.add('form__submit--disabled');
-        }
-    });
-
 
     // REGISTRATION FORM
     var subLocation2 = '/user/registration/',

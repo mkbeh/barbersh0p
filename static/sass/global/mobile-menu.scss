@@ -4,9 +4,11 @@
   display: none;
   margin-top: 8vh;
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  //top: 40%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
+  top: 14vh;
+  right: 0;
   width: 95%;
   max-width: 520px;
 
@@ -96,5 +98,5 @@ a.item__link {
 
 
 @keyframes appear {
-	0% {transform: translateX(-2000px); }
+  1% {transform: translate(10000px, 0px); }
 }

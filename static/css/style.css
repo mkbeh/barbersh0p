@@ -467,9 +467,8 @@ template {
   display: none;
   margin-top: 8vh;
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 14vh;
+  right: 0;
   width: 95%;
   max-width: 520px; }
   .list__nav .nav__container {
@@ -533,8 +532,8 @@ a.item__link {
   color: #a09187; }
 
 @keyframes appear {
-  0% {
-    transform: translateX(-2000px); } }
+  1% {
+    transform: translate(10000px, 0px); } }
 
 .popup__container {
   position: absolute;

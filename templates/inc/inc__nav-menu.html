@@ -20,12 +20,14 @@
             <li class="list__item">
                 <a class="item__link" href="#">КОНТАКТЫ</a>
             </li>
+            {% if not user.is_authenticated %}
             <li class="list__item--last">
                 <a class="item__link">
                     <img class="link__img" src="{% static "img/login.png" %}">
                     <span>&nbsp;&nbsp;Вход</span>
                 </a>
             </li>
+            {% endif %}
         </ul>
     </div>
 </nav>

@@ -45,6 +45,7 @@
            {% if user.is_authenticated %}
                 Или не будет)))
                {{ user.username }}
+               {{ user.email }}
                <a href="{% url "logout" %}">logout</a>
            {% endif %}
         {% endblock %}
