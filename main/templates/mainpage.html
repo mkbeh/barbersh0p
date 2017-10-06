@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    Главная страница
+{% endblock %}
+{% block content %}
+    <div class="content__title">
+        <h2 class="title__title">
+            СТРИЖКА У НАС ЭТО ВЫГОДНО!
+        </h2>
+        <p class="title__description">
+            Мужская стражика требует точного подхода. Обратимся к статистике:
+        </p>
+    </div>
+    <table class="content__statistic">
+        <tr class="statistic__price">
+            <td class="statistic__left">1500*</td>
+            <td class="statistic__right">
+                рублей<br>
+                вложений
+            </td>
+        </tr>
+        <tr class="statistic__time">
+            <th class="statistic__left">7200</th>
+            <th class="statistic__right">
+                секунд<br>
+                времени мастера
+            </th>
+        </tr>
+        <tr class="statistic__count">
+            <th class="statistic__left">90000</th>
+            <th class="statistic__right">
+                постриженных<br>
+                волос
+            </th>
+        </tr>
+        <tr class="statistic__likes">
+            <th class="statistic__left">500 000*</th>
+            <th class="statistic__right">
+                лайков и<br>
+                комплиментов
+            </th>
+        </tr>
+    </table>
+    <div class="content__slider">
+        <ul id="slides">
+            <li class="slide showing">
+                <img class="slide__img" src="{% static "img/slide1.svg" %}">
+                <h2>БЫСТРО</h2>
+                <p class="slide__text">
+                    Мы делаем свою работу быстро!<br>
+                    Два часа пролетят незаметно<br>
+                    и Вы - счастливый обладатель<br>
+                    стильной стрижки-минутки!<br>
+                </p>
+            </li>
+            <li class="slide">
+                <img class="slide__img" src="{% static "img/slide2.svg" %}">
+                <h2>КРУТО</h2>
+                <p class="slide__text">
+                    Забудьте, как вы стриглись<br>
+                    раньше. Мы сделаем из Вас<br>
+                    звезду футбола или кино.<br>
+                    Во всяком случае внешне.
+                </p>
+            </li>
+            <li class="slide">
+                <img class="slide__img" src="{% static "img/slide3.svg" %}">
+                <h2>ДОРОГО</h2>
+                <p class="slide__text">
+                    Наши мастера — профессионалы<br>
+                    своего дела и не могут стоить<br>
+                    дёшево. К тому же, разве цена не<br>
+                    дает определнный статус?
+                </p>
+            </li>
+        </ul>
+        <div id="squares">
+            <div class="square current"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+        <div class="buttons">
+            <button class="controls" id="previous">&lt;</button>
+            <button class="controls" id="pause">&#10074;&#10074;</button>
+            <button class="controls" id="next">&gt;</button>
+        </div>
+    </div>
+
+{% endblock %}

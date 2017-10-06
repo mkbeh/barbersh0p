@@ -23,6 +23,13 @@
 
     <div class="flex-container" id="flex">
         <header class="flex-container__header" id="head">
+            {% if user.is_authenticated %}
+                <div class="header__line"></div>
+                <div class="header__user">
+                    <a class="user__username" href="#">{{ user.username }},</a>
+                    <a class="user__logout" href="{% url "logout" %}">выйти</a>
+                </div>
+            {% endif %}
             <div class="header__logo">
                 <span class="logo__block">
                     <a href="#">
@@ -38,17 +45,11 @@
                 </span>
             </div>
         </header>
-        {% block content %}
-           <p>
-               ЗДЕСЬ БУДЕТ КОНТЕНТИЩЕЕЕЕЕЕЕЕ!!!!!!!!ЗДЕСЬ БУДЕТ КОНТЕНТИЩЕЕЕЕЕЕЕЕ!!!!!!!!
-           </p>
-           {% if user.is_authenticated %}
-                Или не будет)))
-               {{ user.username }}
-               {{ user.email }}
-               <a href="{% url "logout" %}">logout</a>
-           {% endif %}
-        {% endblock %}
+
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
 
         <footer class="flex-container__footer">
             <strong class="footer__shop-name">Барбершоп Бородинский</strong>

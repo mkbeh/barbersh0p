@@ -39,3 +39,26 @@
     }
   }
 }
+
+.header__line {
+  width: 100vw;
+  height: 7px;
+  background-color: #5f493a;
+  position: absolute;
+  border-radius: 0 0 0 50%;
+}
+
+.header__user {
+  color: white;
+  position: absolute;
+  right: 5vw;
+  background-color: #5f493a;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  border-radius: 0 0 10px 10px;
+
+  .user__username, .user__logout {
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+}

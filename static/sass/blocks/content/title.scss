@@ -1,0 +1,22 @@
+.content__title {
+  color: black;
+  width: 100%;
+  text-align: center;
+  background-image: url("../img/title_background.jpg");
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+
+  .title__title, .title__description {
+    margin: auto;
+  }
+
+  .title__title {
+    margin-bottom: 0.5em;
+    width: 40%;
+  }
+
+  .title__description {
+    font-size: 1.1rem;
+    width: 75%;
+  }
+}
