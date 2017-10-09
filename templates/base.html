@@ -32,14 +32,14 @@
             {% endif %}
             <div class="header__logo">
                 <span class="logo__block">
-                    <a href="#">
+                    <a href="{% url 'main' %}">
 {#                        <object type="image/svg+xml" data="{% static "img/logotype-mobile.svg" %}">Logo</object>#}
                         <img src="{% static "img/logotype-mobile.png" %}">
                     </a>
                 </span>
             </div>
             <div class="header__list" id="list">
-                <span class="list__page-name">Название Страницы</span>
+                <span class="list__page-name">Название</span>
                 <span class="nav__img">
                     <img class="img--active" id="imgBurger" src="{% static "img/menu-icon.png" %}">
                 </span>

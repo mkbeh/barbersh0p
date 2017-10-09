@@ -266,6 +266,9 @@ window.onload = function(){
                 }
             });
         }
+
+
+
     }
 
     // REGISTRATION FORM
@@ -393,69 +396,85 @@ window.onload = function(){
     }
 
     // SLIDER
+    var slider = document.querySelector('.content__slider');
 
-    var controls = document.querySelectorAll('.controls');
+    if (slider) {
+        var controls = document.querySelectorAll('.controls');
 
-    for(var z=0; z<controls.length; z++){
-        controls[z].style.display = 'inline-block';
+        for (var z = 0; z < controls.length; z++) {
+            controls[z].style.display = 'inline-block';
+        }
+
+        var slides = document.querySelectorAll('#slides .slide'),
+            currentSlide = 0,
+            squares = document.querySelectorAll('#squares .square'),
+            currentSquare = 0,
+            slideInterval = setInterval(nextSlide, 2000);
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        function goToSlide(n) {
+            slides[currentSlide].className = 'slide';
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].className = 'slide showing';
+
+            squares[currentSquare].className = 'square';
+            currentSquare = (n + squares.length) % squares.length;
+            squares[currentSquare].className = 'square current';
+        }
+
+
+        var playing = true,
+            pauseButton = document.getElementById('pause');
+
+        function pauseSlideshow() {
+            pauseButton.innerHTML = '&#9658;'; // play character
+            playing = false;
+            clearInterval(slideInterval);
+        }
+
+        function playSlideshow() {
+            pauseButton.innerHTML = '&#10074;&#10074;'; // pause character
+            playing = true;
+            slideInterval = setInterval(nextSlide, 2000);
+        }
+
+        pauseButton.onclick = function () {
+            if (playing) {
+                pauseSlideshow();
+            }
+            else {
+                playSlideshow();
+            }
+        };
+
+        var next = document.getElementById('next'),
+            previous = document.getElementById('previous');
+
+        next.onclick = function () {
+            pauseSlideshow();
+            nextSlide();
+        };
+        previous.onclick = function () {
+            pauseSlideshow();
+            previousSlide();
+        };
     }
 
-    var slides = document.querySelectorAll('#slides .slide'),
-        currentSlide = 0,
-        squares = document.querySelectorAll('#squares .square'),
-        currentSquare = 0,
-        slideInterval = setInterval(nextSlide,2000);
-
-    function nextSlide(){
-        goToSlide(currentSlide+1);
-    }
-
-    function previousSlide(){
-        goToSlide(currentSlide-1);
-    }
-
-    function goToSlide(n){
-        slides[currentSlide].className = 'slide';
-        currentSlide = (n+slides.length)%slides.length;
-        slides[currentSlide].className = 'slide showing';
-
-        squares[currentSquare].className = 'square';
-        currentSquare = (n+squares.length)%squares.length;
-        squares[currentSquare].className = 'square current';
-    }
+    // GENERIC NAME PAGE
+    var title = document.querySelector(".content__title"); // class from mainpage
+    var pageName = document.querySelector(".list__page-name"); // place where insert generic page name
+    var registration = document.querySelector(".regForm"); // account registration page
 
 
-    var playing = true,
-        pauseButton = document.getElementById('pause');
-
-    function pauseSlideshow(){
-        pauseButton.innerHTML = '&#9658;'; // play character
-        playing = false;
-        clearInterval(slideInterval);
-    }
-
-    function playSlideshow(){
-        pauseButton.innerHTML = '&#10074;&#10074;'; // pause character
-        playing = true;
-        slideInterval = setInterval(nextSlide,2000);
-    }
-
-    pauseButton.onclick = function(){
-        if(playing){ pauseSlideshow(); }
-        else{ playSlideshow(); }
-    };
-
-    var next = document.getElementById('next'),
-        previous = document.getElementById('previous');
-
-    next.onclick = function(){
-        pauseSlideshow();
-        nextSlide();
-    };
-    previous.onclick = function(){
-        pauseSlideshow();
-        previousSlide();
-    };
+    if (title) pageName.innerHTML = "ГЛАВНАЯ";
+    else if (registration) pageName.innerHTML = "РЕГИСТРАЦИЯ"
 
 };
 

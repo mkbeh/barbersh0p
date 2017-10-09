@@ -1,0 +1,19 @@
+.content__news {
+  background-image: url("../img/background-news.jpg");
+  text-align: center;
+
+  .news__title {
+    margin: 0;
+  }
+}
+
+
+.content__triangle {
+  background-image: url("../img/background-news.jpg");
+}
+
+.triangle {
+  width: 100%;
+  height: 8vh;
+  transform: rotate(180deg);
+}

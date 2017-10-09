@@ -100,3 +100,8 @@ a.item__link {
 @keyframes appear {
   1% {transform: translate(10000px, 0px); }
 }
+
+.active {
+  background-color: #6a4d38;
+  border: 1px solid #422f21;
+}

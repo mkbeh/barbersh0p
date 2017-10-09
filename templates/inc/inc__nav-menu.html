@@ -5,7 +5,8 @@
             <button class="button-close--style" type="button" title="закрыть">&times;</button>
         </span>
         <ul class="container__list" id="item__link">
-            <li class="list__item" >
+            {% url "main" as page_url %}
+            <li class="list__item {% if page_url == current_url %} active {% endif %}" >
                 <a class="item__link" href="{% url 'main' %}">ГЛАВНАЯ</a>
             </li>
             <li class="list__item">

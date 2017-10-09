@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block title %}
-    Главная страница
+    Главная
 {% endblock %}
 {% block content %}
     <div class="content__title">
@@ -86,5 +86,23 @@
             <button class="controls" id="next">&gt;</button>
         </div>
     </div>
+
+    <div class="content__triangle">
+        <img class="triangle" src="{% static "img/trNews.svg" %}">
+    </div>
+
+
+    <div class="content__news">
+        <h2 class="news__title">НОВОСТИ И АКЦИИ</h2>
+    </div>
+
+    <div class="content__reviews">
+        <h2 class="reviews__title">ОТЗЫВЫ О НАС</h2>
+    </div>
+
+    <div>
+        <img class="triangle" src="{% static "img/trReviews.svg" %}">
+    </div>
+
 
 {% endblock %}
