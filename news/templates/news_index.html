@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+    Новости
+{% endblock %}
+{% block content %}
+    <div class="news">
+        {% include "generic/messages.html" %}
+        <h2 class="news__title">Новости</h2>
+        {% if user.is_superuser %}
+            <p>
+                <a href="{% url "new_add" %}">Добавить новость</a>
+            </p>
+        {% endif %}
+        {% for object in latest %}
+            <h3>
+                <a href="{% url "news_detail" pk=object.pk %}?page={{ page_obj.number }}">
+                    {{ object.title }}
+                </a>
+            </h3>
+            <p class="posted">
+                {{ object.posted|date:"j.m.Y:i:s" }}
+            </p>
+            <p class="buttons">
+                {% if user.is_superuser %}
+                    <a href="{% url "news_edit" pk=object.pk %}?page={{ page_obj.number }}">
+                        Изменить
+                    </a>
+                {% endif %}
+                {% if user.is_superuser %}
+                    <a href="{% url "news_delete" pk=object.pk %}?page={{ page_obj.number }}">
+                        Удалить
+                    </a>
+                {% endif %}
+            </p>
+        {% endfor %}
+        {% include "generic/pagination.html" %}
+        <span class="news-title"></span>
+    </div>
+{% endblock %}
+

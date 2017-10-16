@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites', # обесп-т поддержку нескольких сайтов одной копией Джанго - для подсистемы комментирования
+    'precise_bbcode',  # форматирование текса с помощью тегов bbcode
     'main',
     'userManagement',
+    'news',
 ]
 
 MIDDLEWARE = [

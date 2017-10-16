@@ -1127,6 +1127,13 @@ a.item__link {
   height: 8vh;
   transform: rotate(180deg); }
 
+.news {
+  background-image: url("../img/background-news.jpg"); }
+  .news .news__title {
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em; }
+
 .content__reviews {
   background-image: url("../img/background-news.jpg");
   text-align: center; }

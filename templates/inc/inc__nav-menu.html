@@ -6,14 +6,15 @@
         </span>
         <ul class="container__list" id="item__link">
             {% url "main" as page_url %}
-            <li class="list__item {% if page_url == current_url %} active {% endif %}" >
+            <li class="list__item {% if page_url == current_url %} active {% endif %}">
                 <a class="item__link" href="{% url 'main' %}">ГЛАВНАЯ</a>
             </li>
             <li class="list__item">
                 <a class="item__link" href="#">ИНФОРМАЦИЯ</a>
             </li>
-            <li class="list__item">
-                <a class="item__link" href="#">НОВОСТИ</a>
+            {% url "news_index" as page_url %}
+            <li class="list__item {% if url_name == current_url %} active {% endif %}">
+                <a class="item__link" href="{% url "news_index" %}">НОВОСТИ</a>
             </li>
             <li class="list__item">
                 <a class="item__link" href="#">ПРАЙС-ЛИСТ</a>

@@ -23,5 +23,6 @@ urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^$', include('main.urls')),
     url(r'^user/', include('userManagement.urls')),
+    url(r'^news/', include('news.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

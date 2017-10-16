@@ -94,6 +94,17 @@
 
     <div class="content__news">
         <h2 class="news__title">НОВОСТИ И АКЦИИ</h2>
+        {% for object in news %}
+            <h3>
+                <a href="{% url "news_detail" pk=object.pk %}">
+                    {{ object.content }}
+                </a>
+            </h3>
+            <p>
+                {{ object.posted|date:"j.m.Y H:i:s" }}
+            </p>
+        {% endfor %}
+
     </div>
 
     <div class="content__reviews">

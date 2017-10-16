@@ -471,10 +471,12 @@ window.onload = function(){
     var title = document.querySelector(".content__title"); // class from mainpage
     var pageName = document.querySelector(".list__page-name"); // place where insert generic page name
     var registration = document.querySelector(".regForm"); // account registration page
+    var news = document.querySelector(".news-title");
 
 
     if (title) pageName.innerHTML = "ГЛАВНАЯ";
-    else if (registration) pageName.innerHTML = "РЕГИСТРАЦИЯ"
+    else if (registration) pageName.innerHTML = "РЕГИСТРАЦИЯ";
+    else if (news) pageName.innerHTML = "НОВОСТИ";
 
 };
 
