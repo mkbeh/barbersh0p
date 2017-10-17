@@ -95,16 +95,22 @@
     <div class="content__news">
         <h2 class="news__title">НОВОСТИ И АКЦИИ</h2>
         {% for object in news %}
-            <h3>
-                <a href="{% url "news_detail" pk=object.pk %}">
-                    {{ object.content }}
-                </a>
-            </h3>
-            <p>
-                {{ object.posted|date:"j.m.Y H:i:s" }}
-            </p>
+            <div class="news__content">
+                <div class="content__container">
+                    <img class="content__img" src="{% static "img/date_background.png" %}" style="width: 50px" height="">
+                    <p class="content__date">
+                        <span class="date__day">{{ object.posted|date:"j" }}</span>
+                        <span class="date__month">{{ object.posted|date:"M" }}</span>
+                    </p>
+                </div>
+                <p class="content__text">
+                    <a class="text__link" href="{% url "news_detail" pk=object.pk %}">
+                        {{ object.content }}
+                    </a>
+                </p>
+            </div>
         {% endfor %}
-
+        <a class="news__btn" href="{% url "news_index" %}">ПОКАЗАТЬ ВСЕ</a>
     </div>
 
     <div class="content__reviews">
