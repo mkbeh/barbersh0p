@@ -1,9 +1,36 @@
 .news {
   background-image: url("../img/background-news.jpg");
+  padding-left: 4vw;
 
   .news__title {
     text-align: center;
     margin: 0;
     padding-top: 0.5em;
   }
+
+  .news__container {
+
+
+    .container__link {
+      border: 1px solid #e5ddd5;
+      padding: 0.2em 0.2em 0.2em 0.2em;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .news__title2 {
+
+    .title2__link {
+      color: black;
+    }
+  }
+
+  .news__container {
+
+    .container--margin {
+      margin-left: 1em;
+    }
+  }
+
 }

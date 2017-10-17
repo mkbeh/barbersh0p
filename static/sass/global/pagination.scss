@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5em;
+  padding-bottom: 1em;
+
+  .previous-page {
+    border: 1px solid #e5ddd5;
+    padding: 0.4em 0.8em 0.4em 0.8em;
+
+    .previous-page__link {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  .next-page {
+    border: 1px solid #e5ddd5;
+    padding: 0.4em 0.8em 0.4em 0.8em;
+
+    .next-page__link {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  .num-pages {
+    border: 1px solid #e5ddd5;
+    padding: 0.4em 0.8em 0.4em 0.8em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+
+    .num-pages__link {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}

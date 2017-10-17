@@ -7,27 +7,27 @@
         {% include "generic/messages.html" %}
         <h2 class="news__title">Новости</h2>
         {% if user.is_superuser %}
-            <p>
-                <a href="{% url "new_add" %}">Добавить новость</a>
+            <p class="news__container">
+                <a class="container__link" href="{% url "new_add" %}">Добавить новость</a>
             </p>
         {% endif %}
         {% for object in latest %}
-            <h3>
-                <a href="{% url "news_detail" pk=object.pk %}?page={{ page_obj.number }}">
+            <h3 class="news__title2">
+                <a class="title2__link" href="{% url "news_detail" pk=object.pk %}?page={{ page_obj.number }}">
                     {{ object.title }}
                 </a>
             </h3>
-            <p class="posted">
-                {{ object.posted|date:"j.m.Y:i:s" }}
+            <p class="news__posted">
+                {{ object.posted|date:"j.m.Y h:i:s" }}
             </p>
-            <p class="buttons">
+            <p class="news__container">
                 {% if user.is_superuser %}
-                    <a href="{% url "news_edit" pk=object.pk %}?page={{ page_obj.number }}">
+                    <a class="container__link" href="{% url "news_edit" pk=object.pk %}?page={{ page_obj.number }}">
                         Изменить
                     </a>
                 {% endif %}
                 {% if user.is_superuser %}
-                    <a href="{% url "news_delete" pk=object.pk %}?page={{ page_obj.number }}">
+                    <a class="container__link container--margin" href="{% url "news_delete" pk=object.pk %}?page={{ page_obj.number }}">
                         Удалить
                     </a>
                 {% endif %}

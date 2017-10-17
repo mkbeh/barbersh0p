@@ -1,26 +1,19 @@
 {% if paginator.num_pages > 1 %}
-    <div id="pagination">
+    <div class="pagination">
         {% if page_obj.has_previous %}
-            <div id="previous-page">
-                <a href="?page={{ page_obj.previous_page_number }}">
+            <div class="previous-page">
+                <a class="previous-page__link" href="?page={{ page_obj.previous_page_number }}">
                     &lt;
                 </a>
             </div>
         {% endif %}
-        {% if page_obj.has_next %}
-            <div id="next-page">
-                <a href="?page={{ page_obj.next_page_number }}">
-                    &gt;
-                </a>
-            </div>
-        {% endif %}
-        <div id="num-pages">
+        <div class="num-pages">
             {% for pn in paginator.page_range %}
                 {% if not forloop.first %}
-                    &nbsp; &nbsp; &nbsp; &nbsp;
+{#                    &nbsp; &nbsp; &nbsp; &nbsp;#}
                 {% endif %}
                 {% if page_obj.number != pn %}
-                    <a href="?page={{ pn}}">
+                    <a class="num-pages__link" href="?page={{ pn}}">
                     {{ pn }}
                     {% if page_obj.number != pn %}
                     </a>
@@ -28,5 +21,12 @@
                 {% endif %}
             {% endfor %}
         </div>
+        {% if page_obj.has_next %}
+            <div class="next-page">
+                <a class="next-page__link" href="?page={{ page_obj.next_page_number }}">
+                    &gt;
+                </a>
+            </div>
+        {% endif %}
     </div>
 {% endif %}

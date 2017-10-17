@@ -15,9 +15,10 @@ body {
 @import "mixins.scss";
 @import "variables.scss";
 @import "blocks/header/header.scss";
+@import "blocks/content/content.scss";
 @import "blocks/footer/footer.scss";
 @import "global/mobile-menu.scss";
 @import "global/popup.scss";
 @import "global/registration.scss";
 @import "global/preloader.scss";
-@import "blocks/content/content.scss";
+@import "global/pagination";
