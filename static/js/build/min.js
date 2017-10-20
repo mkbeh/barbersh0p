@@ -478,5 +478,17 @@ window.onload = function(){
     else if (registration) pageName.innerHTML = "РЕГИСТРАЦИЯ";
     else if (news) pageName.innerHTML = "НОВОСТИ";
 
+
+    // DISAPPEAR MESSAGES
+    message = document.querySelector('.message-list');
+
+    function disappear() {
+        if (message) {
+            message.style.display = 'none';
+        }
+    }
+
+    setTimeout(disappear, 5000)
+
 };
 

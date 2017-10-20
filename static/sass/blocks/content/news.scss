@@ -26,6 +26,7 @@
         position: absolute;
         top: -1em;
 
+
         .date__day {
           font-size: 1.7rem;
         }
@@ -62,6 +63,12 @@
     font-weight: bold;
     padding-top: 0.3em;
     padding-bottom: 0.3em;
+  }
+
+  .news__btn:active {
+    border: 1px solid #716d69;
+    background-color: #8f8a85;
+    color: white;
   }
 
 }

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block title %}
     Новости
 {% endblock %}
@@ -18,23 +19,25 @@
                 </a>
             </h3>
             <p class="news__posted">
-                {{ object.posted|date:"j.m.Y h:i:s" }}
+                {{ object.posted|date:"j.m.Y h:i" }}
             </p>
-            <p class="news__container">
+            <p class="news__container2">
                 {% if user.is_superuser %}
-                    <a class="container__link" href="{% url "news_edit" pk=object.pk %}?page={{ page_obj.number }}">
+                    <a class="container2__link" href="{% url "news_edit" pk=object.pk %}?page={{ page_obj.number }}">
                         Изменить
                     </a>
                 {% endif %}
                 {% if user.is_superuser %}
-                    <a class="container__link container--margin" href="{% url "news_delete" pk=object.pk %}?page={{ page_obj.number }}">
+                    <a class="container2__link container2--margin" href="{% url "news_delete" pk=object.pk %}?page={{ page_obj.number }}">
                         Удалить
                     </a>
                 {% endif %}
             </p>
         {% endfor %}
         {% include "generic/pagination.html" %}
-        <span class="news-title"></span>
+    </div>
+    <div>
+        <img class="triangle" src="{% static "img/trReviews.svg" %}">
     </div>
 {% endblock %}
 

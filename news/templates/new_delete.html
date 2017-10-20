@@ -4,17 +4,24 @@
     Удаление новости :: {{ object.title}}
 {% endblock %}
 {% block content %}
-    <h2>Удаление новости</h2>
-    <h4>{{ object.title}}</h4>
-    <div>{{ object.content|bbcode|safe }}</div>
-    <p>
-        {{ object.posted|date:"j.m.Y H:i:s" }}
-    </p>
-    <form action="" method="post">
-        {% csrf_token %}
-        <input type="submit" value="Удалить">
-    </form>
-    <p>
-        <a href="{% url "news_index" %}?page={{ pn }}">Назад</a>
-    </p>
+    <div class="new-delete">
+        <h2 class="new-delete__title">Удаление новости</h2>
+        <h3 class="new-delete__title2">{{ object.title}}</h3>
+        <div class="new-delete__content">{{ object.content|bbcode|safe }}</div>
+        <p class="new-delete__posted">
+            {{ object.posted|date:"j.m.Y H:i:s" }}
+        </p>
+        <form class="form__form" action="" method="post">
+            {% csrf_token %}
+            <span class="form__btn">
+                <input class="btn--style" type="submit" value="Удалить">
+            </span>
+        </form>
+{#        <div class="form__btn">#}
+{#            <input class="btn--style" type="submit" value="Удалить">#}
+{#        </div>#}
+        <p class="news-delete__container">
+            <a class="container__link" href="{% url "news_index" %}?page={{ pn }}">Назад</a>
+        </p>
+    </div>
 {% endblock %}

@@ -1,0 +1,50 @@
+.new {
+  background-image: url("../img/background-news.jpg");
+  padding-left: 4vw;
+  padding-bottom: 1.5em;
+
+  .new__title {
+    margin: 0;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .new__content {
+    font-size: 1.1rem;
+  }
+
+  .new__posted {
+    color: white;
+    background-color: black;
+    width: 32vw;
+    max-width: 170px;
+    margin-bottom: 3em;
+    text-align: center;
+  }
+
+  .new__container {
+    width: 20vw;
+    max-width: 100px;
+    text-align: center;
+    margin: 0;
+
+    .container__link2 {
+      text-decoration: none;
+      display: block;
+      border: 1px solid #e5ddd5;
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+    }
+
+    .container__link2:active {
+      border: 1px solid #716d69;
+      background-color: #8f8a85;
+      color: white;
+    }
+  }
+
+}

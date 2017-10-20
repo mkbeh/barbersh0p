@@ -605,6 +605,10 @@ template {
     font-weight: bold;
     padding-top: 0.3em;
     padding-bottom: 0.3em; }
+  .content__news .news__btn:active {
+    border: 1px solid #716d69;
+    background-color: #8f8a85;
+    color: white; }
 
 .content__triangle {
   background-image: url("../img/background-news.jpg"); }
@@ -621,15 +625,197 @@ template {
     text-align: center;
     margin: 0;
     padding-top: 0.5em; }
-  .news .news__container .container__link {
-    border: 1px solid #e5ddd5;
-    padding: 0.2em 0.2em 0.2em 0.2em;
-    text-decoration: none;
-    color: black; }
+  .news .news__container {
+    margin-bottom: 2em; }
+    .news .news__container .container__link {
+      border: 1px solid #e5ddd5;
+      padding: 0.2em 0.2em 0.2em 0.2em;
+      text-decoration: none;
+      color: black; }
+    .news .news__container .container__link:active {
+      border: 1px solid #716d69;
+      background-color: #8f8a85;
+      color: white; }
   .news .news__title2 .title2__link {
     color: black; }
-  .news .news__container .container--margin {
-    margin-left: 1em; }
+  .news .news__title2 .title2__link:active {
+    border: 1px solid #716d69;
+    background-color: #8f8a85;
+    color: white; }
+  .news .news__posted {
+    color: white;
+    background-color: black;
+    width: 32vw;
+    max-width: 170px;
+    text-align: center; }
+  .news .news__container2 {
+    width: 50vh;
+    max-width: 200px;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #9d9893;
+    padding-bottom: 2em; }
+    .news .news__container2 .container2__link {
+      border: 1px solid #e5ddd5;
+      padding: 0.2em 0.2em 0.2em 0.2em;
+      text-decoration: none;
+      color: black; }
+    .news .news__container2 .container2__link:active {
+      border: 1px solid #716d69;
+      background-color: #8f8a85;
+      color: white; }
+    .news .news__container2 .container2--margin {
+      margin-left: 1em; }
+  .news .news__container2:last-of-type {
+    border-bottom: none; }
+
+.news-add {
+  background-image: url("../img/background-news.jpg");
+  padding-left: 4vw;
+  padding-bottom: 1.5em; }
+  .news-add .news-add__title {
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+  .news-add .news-add__form .form__form .form__btn .btn--style {
+    background-color: #6a4d38;
+    color: white;
+    border: 1px solid black;
+    padding: 0.6em 0.7em 0.6em 0.7em;
+    width: 50vw;
+    max-width: 300px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    margin-top: 2.5vh; }
+  .news-add .news-add__container {
+    width: 20vw;
+    max-width: 100px;
+    text-align: center;
+    margin: 0; }
+    .news-add .news-add__container .container__link {
+      text-decoration: none;
+      display: block;
+      border: 1px solid #e5ddd5;
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em; }
+    .news-add .news-add__container .container__link:active {
+      border: 1px solid #716d69;
+      background-color: #8f8a85;
+      color: white; }
+
+.new-delete {
+  background-image: url("../img/background-news.jpg");
+  padding-left: 4vw;
+  padding-bottom: 1.5em; }
+  .new-delete .new-delete__title {
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+  .new-delete .new-delete__posted {
+    color: white;
+    background-color: black;
+    width: 32vw;
+    max-width: 170px;
+    margin-bottom: 3em;
+    text-align: center; }
+  .new-delete .form__btn .btn--style {
+    background-color: #6a4d38;
+    color: white;
+    border: 1px solid black;
+    padding: 0.6em 0.7em 0.6em 0.7em;
+    width: 50vw;
+    max-width: 300px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    margin-top: 2.5vh; }
+  .new-delete .news-delete__container {
+    width: 20vw;
+    max-width: 100px;
+    text-align: center;
+    margin: 0; }
+    .new-delete .news-delete__container .container__link {
+      text-decoration: none;
+      display: block;
+      border: 1px solid #e5ddd5;
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em; }
+    .new-delete .news-delete__container .container__link:active {
+      border: 1px solid #716d69;
+      background-color: #8f8a85;
+      color: white; }
+
+.divas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .divas .pivas {
+    padding: 0.4em 0.7em 0.4em 0.7em;
+    border: 1px solid dimgray;
+    color: dimgray;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background: -moz-linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, silver), color-stop(50%, white), color-stop(100%, gray));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* ie10+ */
+    background: linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#808080', endColorstr='#c0c0c0',GradientType=1 );
+    /* ie6-9 */ }
+
+.new {
+  background-image: url("../img/background-news.jpg");
+  padding-left: 4vw;
+  padding-bottom: 1.5em; }
+  .new .new__title {
+    margin: 0;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+  .new .new__content {
+    font-size: 1.1rem; }
+  .new .new__posted {
+    color: white;
+    background-color: black;
+    width: 32vw;
+    max-width: 170px;
+    margin-bottom: 3em;
+    text-align: center; }
+  .new .new__container {
+    width: 20vw;
+    max-width: 100px;
+    text-align: center;
+    margin: 0; }
+    .new .new__container .container__link2 {
+      text-decoration: none;
+      display: block;
+      border: 1px solid #e5ddd5;
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em; }
+    .new .new__container .container__link2:active {
+      border: 1px solid #716d69;
+      background-color: #8f8a85;
+      color: white; }
 
 .content__reviews {
   background-image: url("../img/background-news.jpg");
@@ -1218,3 +1404,46 @@ a.item__link {
       color: black;
       text-decoration: none;
       font-weight: bold; }
+
+.form-field {
+  font-size: 1.1rem; }
+  .form-field .form-field__label {
+    margin-bottom: 0.5em; }
+  .form-field .form-field__control input {
+    width: 60vw;
+    max-width: 400px;
+    border: 1px solid #6a4d38;
+    margin-bottom: 0.5em; }
+  .form-field .form-field__control textarea {
+    width: 90vw;
+    max-width: 800px;
+    border: 1px solid #6a4d38;
+    margin-bottom: 0.5em; }
+
+.message-list {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .message-list .list__container {
+    padding: 0.4em 0.7em 0.4em 0.7em;
+    border: 1px solid dimgray;
+    color: dimgray;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background: -moz-linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, silver), color-stop(50%, white), color-stop(100%, gray));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* ie10+ */
+    background: linear-gradient(45deg, silver 0%, white 50%, gray 100%);
+    /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#808080', endColorstr='#c0c0c0',GradientType=1 );
+    /* ie6-9 */ }

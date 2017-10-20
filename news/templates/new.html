@@ -1,13 +1,19 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load bbcode_tags %}
 {% block title %}
     {{ object.title }}
 {% endblock %}
 {% block content %}
-    <h2>{{ object.title }}</h2>
-    <div>{{ object.content|bbcode|safe }}</div>
-    <p class="posted">{{ object.posted|date:"j.m.Y H:i:s" }}</p>
-    <p>
-        <a href="{% url "news_index" %}?page={{ pn }}">Назад</a>
-    </p>
+    <div class="new">
+        <h2 class="new__title">{{ object.title }}</h2>
+        <div class="new__content">{{ object.content|bbcode|safe }}</div>
+        <p class="new__posted">{{ object.posted|date:"j.m.Y H:i" }}</p>
+        <p class="new__container">
+            <a class="container__link2" href="{% url "news_index" %}?page={{ pn }}">Назад</a>
+        </p>
+    </div>
+    <div>
+        <img class="triangle" src="{% static "img/trReviews.svg" %}">
+    </div>
 {% endblock %}

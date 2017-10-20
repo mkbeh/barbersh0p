@@ -1,0 +1,52 @@
+@import "../../../mixins.scss";
+
+.news-add {
+  background-image: url("../img/background-news.jpg");
+  padding-left: 4vw;
+  padding-bottom: 1.5em;
+
+  .news-add__title {
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .news-add__form {
+
+    .form__form {
+
+      .form__btn {
+
+        .btn--style {
+          background-color: #6a4d38;
+          @include registerBtn();
+        }
+      }
+    }
+  }
+
+  .news-add__container {
+    width: 20vw;
+    max-width: 100px;
+    text-align: center;
+    margin: 0;
+
+    .container__link {
+      text-decoration: none;
+      display: block;
+      border: 1px solid #e5ddd5;
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+    }
+
+    .container__link:active {
+      border: 1px solid #716d69;
+      background-color: #8f8a85;
+      color: white;
+    }
+  }
+}

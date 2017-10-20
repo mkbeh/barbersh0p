@@ -1,0 +1,81 @@
+@import "../../../mixins.scss";
+
+.new-delete {
+  background-image: url("../img/background-news.jpg");
+  padding-left: 4vw;
+  padding-bottom: 1.5em;
+
+  .new-delete__title {
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .new-delete__posted {
+    color: white;
+    background-color: black;
+    width: 32vw;
+    max-width: 170px;
+    margin-bottom: 3em;
+    text-align: center;
+  }
+
+  .form__btn {
+
+    .btn--style {
+      background-color: #6a4d38;
+      @include registerBtn();
+    }
+  }
+
+  .news-delete__container {
+    width: 20vw;
+    max-width: 100px;
+    text-align: center;
+    margin: 0;
+
+    .container__link {
+      text-decoration: none;
+      display: block;
+      border: 1px solid #e5ddd5;
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+    }
+
+    .container__link:active {
+      border: 1px solid #716d69;
+      background-color: #8f8a85;
+      color: white;
+    }
+  }
+
+}
+
+
+.divas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .pivas {
+    padding: 0.4em 0.7em 0.4em 0.7em;
+    border: 1px solid dimgray;
+    color: dimgray;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+    background: -moz-linear-gradient(45deg, rgba(192,192,192,1) 0%, rgba(255,255,255,1) 50%, rgba(128,128,128,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(192,192,192,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(100%, rgba(128,128,128,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(192,192,192,1) 0%, rgba(255,255,255,1) 50%, rgba(128,128,128,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(192,192,192,1) 0%, rgba(255,255,255,1) 50%, rgba(128,128,128,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(192,192,192,1) 0%, rgba(255,255,255,1) 50%, rgba(128,128,128,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(192,192,192,1) 0%, rgba(255,255,255,1) 50%, rgba(128,128,128,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#808080', endColorstr='#c0c0c0',GradientType=1 ); /* ie6-9 */
+  }
+}
